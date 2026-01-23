@@ -1,0 +1,5 @@
+obj/
+minilibx-linux/
+*.txt
+*.tgz
+*.o
