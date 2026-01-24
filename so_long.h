@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/24 08:25:06 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:31:31 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,23 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE_SL
+#  define BUFFER_SIZE_SL 50
+
+# endif
+
+typedef struct s_ch	t_ch;
+struct	s_ch
+{
+	int	ep;
+	int	w;
+	int	c;
+	int	e;
+	int	p;
+	int	n;
+};
+
+char	**ft_create_map(char *str);
 
 #endif

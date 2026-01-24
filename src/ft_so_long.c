@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/24 10:41:43 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/24 12:45:22 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ static void	ft_error_args(int ac, char **av)
 		exit(EXIT_FAILURE);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
+	char	**map;
+
 	ft_error_args(ac, av);
+	map = ft_create_map(av[1]);
 }
