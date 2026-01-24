@@ -1,3 +1,0 @@
-[submodule "src/Libft"]
-	path = src/Libft
-	url = git@github.com:Simeriash/Libft.git
