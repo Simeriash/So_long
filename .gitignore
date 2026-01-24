@@ -3,3 +3,5 @@ minilibx-linux/
 *.txt
 *.tgz
 *.o
+*.out
+*.gch
