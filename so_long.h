@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 10:32:18 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 14:04:37 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@
 typedef struct s_ch	t_ch;
 struct	s_ch
 {
-	int	ep;
-	int	w;
 	int	c;
 	int	e;
 	int	p;
-	int	n;
+	int	others;
 };
 
+void	ft_error_args(int ac, char **av);
 char	**ft_create_map(char *str);
+void	ft_error_characters(char **map_file);
 
 #endif

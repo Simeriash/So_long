@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 13:22:17 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 14:31:12 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_read_file_map(char *str, char **readed_file, int fd)
 	if (!buffer)
 		ft_exit(buffer, &*readed_file, 0);
 	read_file = 1;
-	while (read_file )
+	while (read_file)
 	{
 		read_file = read(fd, buffer, BUFFER_SIZE_SL);
 		if (read_file == -1)
@@ -49,17 +49,35 @@ static void	ft_read_file_map(char *str, char **readed_file, int fd)
 		*readed_file = tmp;
 	}
 	free(buffer);
+	close(fd);
 }
 
 static void	ft_check_map(char *str, char **map_file)
 {
 	t_ch	ch;
 	int		fd;
+	int		i;
 
 	ft_bzero(&ch, sizeof(ch));
 	fd = open(str, O_RDONLY);
 	ft_read_file_map(str, &*map_file, fd);
-	close(fd);
+	i = 0;
+	while ((*map_file)[i] != '\0')
+	{
+		if ((*map_file)[i] == 'C')
+			(ch.c)++;
+		else if ((*map_file)[i] == 'E')
+			(ch.e)++;
+		else if ((*map_file)[i] == 'P')
+			(ch.p)++;
+		else if ((*map_file)[i] != 'C' && (*map_file)[i] != 'E' &&
+			(*map_file)[i] != 'P' && (*map_file)[i] != '0' &&
+			(*map_file)[i] != '1' && (*map_file)[i] != '\n')
+			(ch.others)++;
+		i++;
+	}
+	if (ch.e != 1 || ch.p != 1 || ch.c == 0 || ch.others != 0)
+		ft_error_characters(&*map_file);
 }
 
 char	**ft_create_map(char *str)
