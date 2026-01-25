@@ -5,7 +5,7 @@ CFLAGS := -Wall -Wextra -Werror -g
 
 HEADER := so_long.h
 
-LIBFT := src/libft/libft.a
+LIBFT := src/Libft/libft.a
 
 SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c
 
@@ -20,7 +20,7 @@ OBJ := $(addprefix $(OBJ_DIR), $(SOURCES:.c=.o))
 all : $(NAME)
 
 $(NAME) : $(OBJ_DIR) $(OBJ)
-	$(MAKE) -C src/libft
+	$(MAKE) -C src/Libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $@
 
 $(OBJ_DIR) :
@@ -32,10 +32,10 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 clean :
 	rm -rf $(OBJ)
 	rm -rf $(OBJ_DIR)
-	$(MAKE) -C src/libft -B clean
+	$(MAKE) -C src/Libft -B clean
 
 fclean :
 	rm -rf $(NAME)
-	$(MAKE) -C src/libft -B fclean
+	$(MAKE) -C src/Libft -B fclean
 
 re : fclean all
