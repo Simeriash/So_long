@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 15:38:55 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 16:11:04 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ char	**ft_create_map(char *str)
 	map = ft_split(map_file, '\n');
 	free(map_file);
 	i = 0;
-
+	ft_printf("%t", map);
 	return (map);
 }

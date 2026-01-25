@@ -4,4 +4,4 @@ minilibx-linux/
 *.tgz
 *.o
 *.out
-*.gch
+so_long
