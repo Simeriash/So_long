@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 15:18:22 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 17:40:13 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ struct	s_ch
 	int	c;
 	int	e;
 	int	p;
+	int	ep;
 	int	others;
 };
 
 void	ft_error_args(int ac, char **av);
 char	**ft_create_map(char *str);
 void	ft_error_characters(char **map_file);
+void	ft_error_map(char **map, int error_code);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 13:43:09 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 14:34:11 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 17:18:22 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,23 @@ void	ft_error_characters(char **map_file)
 {
 	free(*map_file);
 	ft_putstr_fd("Error\nInvalid map\n", 2);
+	exit(EXIT_FAILURE);
+}
+
+void	ft_error_map(char **map, int error_code)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+	if (error_code == 0)
+		ft_putstr_fd("Error\nNon-rectangular map\n", 2);
+	if (error_code == 1)
+		ft_putstr_fd("Error\nInvalid size of map\n", 2);
 	exit(EXIT_FAILURE);
 }

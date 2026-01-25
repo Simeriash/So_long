@@ -6,11 +6,12 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 16:11:04 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 18:03:10 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include <unistd.h>
 
 static void	ft_exit(char *buffer, char **readed_file, int fd)
 {
@@ -37,7 +38,7 @@ static void	ft_read_file_map(char **readed_file, int fd)
 	while (read_file)
 	{
 		read_file = read(fd, buffer, BUFFER_SIZE_SL);
-		if (read_file == -1)
+		if (read_file == -1 || (read_file == 0 && *readed_file == NULL))
 			ft_exit(buffer, &*readed_file, fd);
 		if (read_file == 0)
 			break ;
@@ -61,8 +62,8 @@ static void	ft_check_map(char *str, char **map_file)
 	ft_bzero(&ch, sizeof(ch));
 	fd = open(str, O_RDONLY);
 	ft_read_file_map(&*map_file, fd);
-	i = 0;
-	while ((*map_file)[i] != '\0')
+	i = -1;
+	while ((*map_file)[++i] != '\0')
 	{
 		if ((*map_file)[i] == 'C')
 			(ch.c)++;
@@ -70,13 +71,14 @@ static void	ft_check_map(char *str, char **map_file)
 			(ch.e)++;
 		else if ((*map_file)[i] == 'P')
 			(ch.p)++;
+		else if ((*map_file)[i] == '0')
+			(ch.ep)++;
 		else if ((*map_file)[i] != 'C' && (*map_file)[i] != 'E' &&
 			(*map_file)[i] != 'P' && (*map_file)[i] != '0' &&
 			(*map_file)[i] != '1' && (*map_file)[i] != '\n')
 			(ch.others)++;
-		i++;
 	}
-	if (ch.e != 1 || ch.p != 1 || ch.c == 0 || ch.others != 0)
+	if (ch.e != 1 || ch.p != 1 || ch.c == 0 || ch.ep == 0 || ch.others != 0)
 		ft_error_characters(&*map_file);
 }
 
@@ -85,12 +87,23 @@ char	**ft_create_map(char *str)
 	char	*map_file;
 	char	**map;
 	int		i;
+	size_t	len;
 
 	map_file = NULL;
 	ft_check_map(str, &map_file);
 	map = ft_split(map_file, '\n');
 	free(map_file);
-	i = 0;
+	len = ft_strlen(map[0]);
+	i = 1;
+	while (map[i])
+	{
+		if (len != ft_strlen(map[i]) || (i + 1 == (int)len && map[i + 1] == NULL))
+			ft_error_map(map, 0);
+		i++;
+	}
+	ft_printf("%d %d\n", i, len);
+	if ((len < 6 && i < 4) || (len < 4 && i < 6) || len < 3 || i < 3)
+		ft_error_map(map, 1);
 	ft_printf("%t", map);
 	return (map);
 }
