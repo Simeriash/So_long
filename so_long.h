@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 14:04:37 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 15:05:03 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define SO_LONG_H
 
 # include "minilibx-linux/mlx.h"
-# include "src/Libft/libft.h"
+# include "src/libft/libft.h"
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include <stdio.h>
 
 # ifndef BUFFER_SIZE_SL
 #  define BUFFER_SIZE_SL 50

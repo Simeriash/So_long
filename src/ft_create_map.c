@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 14:31:12 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 15:05:25 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_exit(char *buffer, char **readed_file, int fd)
 	exit(EXIT_FAILURE);
 }
 
-static void	ft_read_file_map(char *str, char **readed_file, int fd)
+static void	ft_read_file_map(char **readed_file, int fd)
 {
 	char	*buffer;
 	char	*tmp;
@@ -60,7 +60,7 @@ static void	ft_check_map(char *str, char **map_file)
 
 	ft_bzero(&ch, sizeof(ch));
 	fd = open(str, O_RDONLY);
-	ft_read_file_map(str, &*map_file, fd);
+	ft_read_file_map(&*map_file, fd);
 	i = 0;
 	while ((*map_file)[i] != '\0')
 	{
@@ -86,7 +86,7 @@ char	**ft_create_map(char *str)
 
 	map_file = NULL;
 	ft_check_map(str, &map_file);
-	printf("%s", map_file);
+	ft_printf("%s", map_file);
 	free(map_file);
 	return (NULL);
 }
