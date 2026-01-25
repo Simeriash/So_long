@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 15:05:25 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 15:38:55 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,14 @@ static void	ft_check_map(char *str, char **map_file)
 char	**ft_create_map(char *str)
 {
 	char	*map_file;
+	char	**map;
+	int		i;
 
 	map_file = NULL;
 	ft_check_map(str, &map_file);
-	ft_printf("%s", map_file);
+	map = ft_split(map_file, '\n');
 	free(map_file);
-	return (NULL);
+	i = 0;
+
+	return (map);
 }
