@@ -6,72 +6,68 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 11:23:43 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/25 13:22:17 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void	ft_exit(char *buffer, char **readed_file)
+static void	ft_exit(char *buffer, char **readed_file, int fd)
 {
 	if (buffer)
+	{
 		free(buffer);
+		close(fd);
+	}
 	if (*readed_file)
 		free(*readed_file);
 	exit(EXIT_FAILURE);
 }
 
-static void	ft_read(int fd, ssize_t *read_file, char *buffer, char **readed_file)
+static void	ft_read_file_map(char *str, char **readed_file, int fd)
 {
-	char	*tmp;
-
-	*read_file = read(fd, buffer, BUFFER_SIZE_SL);
-	if (*read_file == -1)
-		ft_exit(buffer, &*readed_file);
-	if (*read_file == 0)
-		return ;
-	buffer[*read_file] = '\0';
-	tmp = ft_strjoin(*readed_file, buffer);
-	if (!tmp)
-		ft_exit(buffer, &*readed_file);
-	free(*readed_file);
-	*readed_file = tmp;
-}
-
-static char	*ft_read_file_map(char *str)
-{
-	int		fd;
 	char	*buffer;
-	char	*readed_file;
+	char	*tmp;
 	ssize_t	read_file;
 
-	readed_file = NULL;
 	buffer = malloc(sizeof(*buffer) * (BUFFER_SIZE_SL + 1));
 	if (!buffer)
-		ft_exit(buffer, &readed_file);
-	fd = open(str, O_RDONLY);
+		ft_exit(buffer, &*readed_file, 0);
 	read_file = 1;
-	while (read_file)
-		ft_read(fd, &read_file, buffer, &readed_file);
+	while (read_file )
+	{
+		read_file = read(fd, buffer, BUFFER_SIZE_SL);
+		if (read_file == -1)
+			ft_exit(buffer, &*readed_file, fd);
+		if (read_file == 0)
+			break ;
+		buffer[read_file] = '\0';
+		tmp = ft_strjoin(*readed_file, buffer);
+		if (!tmp)
+			ft_exit(buffer, &*readed_file, fd);
+		free(*readed_file);
+		*readed_file = tmp;
+	}
 	free(buffer);
-	return (readed_file);
 }
 
-static char	*ft_check_map(char *str)
+static void	ft_check_map(char *str, char **map_file)
 {
-	char	*readed_file;
 	t_ch	ch;
+	int		fd;
 
 	ft_bzero(&ch, sizeof(ch));
-	readed_file = ft_read_file_map(str);
-	return (readed_file);
+	fd = open(str, O_RDONLY);
+	ft_read_file_map(str, &*map_file, fd);
+	close(fd);
 }
 
 char	**ft_create_map(char *str)
 {
 	char	*map_file;
 
-	map_file = ft_check_map(str);
+	map_file = NULL;
+	ft_check_map(str, &map_file);
 	printf("%s", map_file);
 	free(map_file);
 	return (NULL);
