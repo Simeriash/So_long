@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/27 08:52:22 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/27 13:07:59 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ static void	ft_check_map(char *str, char **map_file)
 		else if ((*map_file)[i] == 'P')
 			(ch.p)++;
 		else if ((*map_file)[i] == '0')
-			(ch.ep)++;
+			(ch.es)++;
 		else if ((*map_file)[i] != 'C' && (*map_file)[i] != 'E' &&
 			(*map_file)[i] != 'P' && (*map_file)[i] != '0' &&
 			(*map_file)[i] != '1' && (*map_file)[i] != '\n')
-			(ch.oth)++;
+			(ch.o)++;
 	}
-	if (ch.e != 1 || ch.p != 1 || ch.c == 0 || ch.ep == 0 || ch.oth != 0)
+	if (ch.e != 1 || ch.p != 1 || ch.c == 0 || ch.es == 0 || ch.o != 0)
 		ft_error_characters(&*map_file);
 }
 
