@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/27 13:07:59 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:48:17 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	ft_read_file_map(char **readed_file, int fd)
 	char	*tmp;
 	ssize_t	read_file;
 
+	*readed_file = NULL;
 	buffer = malloc(sizeof(*buffer) * (BUFFER_SIZE_SL + 1));
 	if (!buffer)
 		ft_exit(buffer, &*readed_file, 0);
@@ -110,21 +111,21 @@ char	**ft_create_map(char *str)
 	int		i;
 	size_t	len;
 
-	map_file = NULL;
 	ft_check_map(str, &map_file);
 	if (map_file[0] == '\n'
 		|| (ft_strnstr(map_file, "\n\n", ft_strlen(map_file))))
 		ft_error_characters(&map_file);
 	map = ft_split(map_file, '\n');
 	free(map_file);
+	if (!map)
+		exit(EXIT_FAILURE);
 	len = ft_strlen(map[0]);
 	i = 1;
-	while (map[i])
+	while (map[++i])
 	{
 		if (len != ft_strlen(map[i])
 			|| (i + 1 == (int)len && map[i + 1] == NULL))
 			ft_error_map(map, 0);
-		i++;
 	}
 	if ((len < 6 && i < 4) || (len < 4 && i < 6) || len < 3 || i < 3)
 		ft_error_map(map, 1);
