@@ -7,7 +7,7 @@ HEADER := so_long.h
 
 LIBFT := src/Libft/libft.a
 
-SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c
+SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_pathfinding.c ft_map_redux.c
 
 SRC_DIR := src/
 SRC := $(addprefix $(SRC_DIR), $(SOURCES))

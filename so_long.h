@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/27 13:07:33 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:22:36 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include <stdio.h>
 
 # ifndef BUFFER_SIZE_SL
 #  define BUFFER_SIZE_SL 50
@@ -38,5 +39,8 @@ void	ft_error_args(int ac, char **av);
 char	**ft_create_map(char *str);
 void	ft_error_characters(char **map_file);
 void	ft_error_map(char **map, int error_code);
+void	ft_pathfinding(char **map);
+char	**ft_map_redux(char **map);
+int		**ft_map_node(char **map_redux);
 
 #endif

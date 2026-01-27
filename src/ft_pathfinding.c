@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_pathfinding.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/27 15:26:38 by julauren         ###   ########.fr       */
+/*   Created: 2026/01/27 13:05:14 by julauren          #+#    #+#             */
+/*   Updated: 2026/01/27 16:45:16 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void	ft_free(char **map)
+static void	ft_free(char **map_redux, int **map_node)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (map[i])
+	while (map_redux[i])
 	{
-		free(map[i]);
+		free(map_redux[i]);
 		i++;
 	}
-	free(map);
+	free(map_redux);
+	if (!map_node)
+		return ;
+	j = 0;
+	while (j < i)
+	{
+		free(map_node[j]);
+		j++;
+	}
+	free(map_node);
 }
 
-int	main(int ac, char **av)
+void	ft_pathfinding(char **map)
 {
-	char	**map;
+	char	**map_redux;
+	int		**map_node;
 
-	ft_error_args(ac, av);
-	map = ft_create_map(av[1]);
-	ft_printf("%t", map);
-	ft_pathfinding(map);
-	ft_free(map);
+	map_redux = ft_map_redux(map);
+	ft_printf("%t", map_redux);
+	map_node = ft_map_node(map_redux);
+	ft_free(map_redux, map_node);
 }
