@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 13:43:09 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 17:18:22 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/27 08:46:08 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,16 @@ static int	ft_ext(char *str)
 
 void	ft_error_args(int ac, char **av)
 {
-	int	err;
-
-	err = 0;
 	if (ac != 2)
 	{
 		ft_putstr_fd("Error\nInvalid number of argumemts\n", 2);
-		err++;
+		exit(EXIT_FAILURE);
 	}
 	else if (ft_ext(av[1]))
 	{
 		ft_putstr_fd("Error\nInvalid argumemt\n", 2);
-		err++;
-	}
-	if (err)
 		exit(EXIT_FAILURE);
+	}
 }
 
 void	ft_error_characters(char **map_file)
@@ -73,5 +68,7 @@ void	ft_error_map(char **map, int error_code)
 		ft_putstr_fd("Error\nNon-rectangular map\n", 2);
 	if (error_code == 1)
 		ft_putstr_fd("Error\nInvalid size of map\n", 2);
+	if (error_code == 2)
+		ft_putstr_fd("Error\nInvalid map\n", 2);
 	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/25 17:40:13 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/27 07:47:28 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ struct	s_ch
 	int	e;
 	int	p;
 	int	ep;
-	int	others;
+	int	oth;
 };
 
 void	ft_error_args(int ac, char **av);
