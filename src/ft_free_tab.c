@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 07:58:20 by julauren         ###   ########.fr       */
+/*   Created: 2026/01/28 07:43:54 by julauren          #+#    #+#             */
+/*   Updated: 2026/01/28 07:44:49 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int ac, char **av)
+void	ft_free_tab(char **tab)
 {
-	char	**map;
+	int	i;
 
-	ft_error_args(ac, av);
-	map = ft_create_map(av[1]);
-	ft_printf("%t", map);
-	ft_pathfinding(map);
-	ft_free_tab(map);
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }

@@ -1,24 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_tabchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 07:58:20 by julauren         ###   ########.fr       */
+/*   Created: 2026/01/28 06:04:04 by julauren          #+#    #+#             */
+/*   Updated: 2026/01/28 07:17:04 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int ac, char **av)
+static int	ft_str_chr(const char *str, int c)
 {
-	char	**map;
+	int		i;
+	int		len;
+	char	*tmp;
 
-	ft_error_args(ac, av);
-	map = ft_create_map(av[1]);
-	ft_printf("%t", map);
-	ft_pathfinding(map);
-	ft_free_tab(map);
+	i = 0;
+	len = ft_strlen(str);
+	tmp = (char *)str;
+	while (i <= len)
+	{
+		if (tmp[i] == (char )c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+int	ft_tabchr(char **tab, int c, int *i, int *j)
+{
+	*i = 0;
+	while (tab[*i])
+	{
+		*j = ft_str_chr(tab[*i], c);
+		if (*j >= 0)
+			return (1);
+		(*i)++;
+	}
+	return (0);
 }

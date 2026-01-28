@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 04:53:05 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/28 08:01:51 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,19 @@ struct	s_ch
 	int	o;
 };
 
-void	ft_error_args(int ac, char **av);
+/*================MAP================*/
+
 char	**ft_create_map(char *str);
+void	ft_pathfinding(char **map);
+char	**ft_tabdup(char **tab);
+int		ft_tabchr(char **tab, int c, int *i, int *j);
+void	ft_free_tab(char **tab);
+
+/*===============ERROR===============*/
+
+void	ft_error_args(int ac, char **av);
 void	ft_error_characters(char **map_file);
 void	ft_error_map(char **map, int error_code);
-char	**ft_tabdup(char **tab);
+void	ft_error_path(char **map, char **map_dup);
 
 #endif

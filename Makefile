@@ -7,7 +7,7 @@ HEADER := so_long.h
 
 LIBFT := src/Libft/libft.a
 
-SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c
+SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c
 
 SRC_DIR := src/
 SRC := $(addprefix $(SRC_DIR), $(SOURCES))
@@ -20,7 +20,7 @@ OBJ := $(addprefix $(OBJ_DIR), $(SOURCES:.c=.o))
 all : $(NAME)
 
 $(NAME) : $(OBJ_DIR) $(OBJ)
-	$(MAKE) -C minilibx-linux/
+	# $(MAKE) -C minilibx-linux/
 	$(MAKE) -C src/Libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $@
 
@@ -33,12 +33,12 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 clean :
 	rm -rf $(OBJ)
 	rm -rf $(OBJ_DIR)
-	$(MAKE) -C minilibx-linux/ -B clean
+	# $(MAKE) -C minilibx-linux/ -B clean
 	$(MAKE) -C src/Libft -B clean
 
 fclean :
 	rm -rf $(NAME)
-	$(MAKE) -C minilibx-linux/ -B clean
+	# $(MAKE) -C minilibx-linux/ -B clean
 	$(MAKE) -C src/Libft -B fclean
 
 re : fclean all
