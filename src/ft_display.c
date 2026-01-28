@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 12:39:41 by julauren         ###   ########.fr       */
+/*   Created: 2026/01/28 12:04:17 by julauren          #+#    #+#             */
+/*   Updated: 2026/01/28 12:36:41 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int ac, char **av)
+void	ft_display(char **map)
 {
-	char	**map;
+	void	*mlx;
+	void	*win;
+	int		x;
+	int		y;
 
-	ft_error_args(ac, av);
-	map = ft_create_map(av[1]);
-	ft_printf("%t", map);
-	ft_pathfinding(map);
-	ft_display(map);
-	ft_free_tab(map);
+	(void)map;
+	mlx = mlx_init();
+	win = mlx_new_window(mlx, 1280, 720, "\\\\_42_//");
+
+	y = 200;
+	while(y <= 300)
+	{
+		x = 200;
+		while(x <= 300)
+		{
+			mlx_pixel_put(mlx, win, x, y, 0x00FFFF);
+			x++;
+		}
+		y++;
+	}
+	mlx_loop(mlx);
+	mlx_destroy_window(mlx, win);
+	mlx_destroy_display(mlx);
+	free(mlx);
 }
