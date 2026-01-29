@@ -1,5 +1,6 @@
 obj/
 minilibx-linux/
+tileset/
 *.txt
 *.tgz
 *.o
