@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 12:39:32 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/30 15:42:01 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,36 @@ struct	s_ch
 	int	o;
 };
 
+typedef struct s_map	t_map;
+struct	s_map
+{
+	char	*corner_1;
+	char	*corner_2;
+	char	*corner_3;
+	char	*corner_4;
+	char	*border_top_1;
+	char	*border_top_2;
+	char	*border_right_1;
+	char	*border_right_2;
+	char	*border_botttom_1;
+	char	*border_botttom_2;
+	char	*border_left_1;
+	char	*border_left_2;
+	char	*wall;
+	char	*ground;
+	char	*tree_1;
+	char	*tree_2;
+	char	*tree_3;
+	char	*tree_4;
+	char	*player_1;
+	char	*player_2;
+	char	*player_3;
+	char	*player_4;
+	char	*exit_close;
+	char	*exit_open;
+	char	*sapphire;
+};
+
 /*================MAP================*/
 
 char	**ft_create_map(char *str);
@@ -42,6 +72,8 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
+void	ft_init_map_1(t_map *map);
+void	ft_init_map_2(t_map *map);
 
 /*===============ERROR===============*/
 
