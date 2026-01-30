@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:04:17 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 12:36:41 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/30 16:54:27 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,11 @@ void	ft_display(char **map)
 {
 	void	*mlx;
 	void	*win;
-	int		x;
-	int		y;
+	t_data	data;
 
-	(void)map;
+	ft_init_map(&data, map);
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 1280, 720, "\\\\_42_//");
-
-	y = 200;
-	while(y <= 300)
-	{
-		x = 200;
-		while(x <= 300)
-		{
-			mlx_pixel_put(mlx, win, x, y, 0x00FFFF);
-			x++;
-		}
-		y++;
-	}
 	mlx_loop(mlx);
 	mlx_destroy_window(mlx, win);
 	mlx_destroy_display(mlx);

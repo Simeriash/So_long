@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/30 15:42:01 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/30 16:52:35 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ struct	s_ch
 	int	o;
 };
 
-typedef struct s_map	t_map;
-struct	s_map
+typedef struct s_data	t_data;
+struct	s_data
 {
+	int		x;
+	int		y;
 	char	*corner_1;
 	char	*corner_2;
 	char	*corner_3;
@@ -72,8 +74,7 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
-void	ft_init_map_1(t_map *map);
-void	ft_init_map_2(t_map *map);
+void	ft_init_map(t_data *data, char **map);
 
 /*===============ERROR===============*/
 
