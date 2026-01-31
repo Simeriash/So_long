@@ -9,7 +9,8 @@ LIBFT := src/Libft/libft.a
 
 MINILIBX := minilibx-linux/libmlx.a
 
-SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c ft_display.c ft_map_initialisation.c
+SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c ft_display.c ft_map_initialisation.c\
+			ft_assets.c
 
 SRC_DIR := src/
 SRC := $(addprefix $(SRC_DIR), $(SOURCES))

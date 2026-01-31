@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/31 09:16:59 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/31 12:44:32 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ struct	s_data
 typedef struct s_asset	t_asset;
 struct	s_asset
 {
+	int		width;
+	int		height;
 	void	*corner_1;
 	void	*corner_2;
 	void	*corner_3;
@@ -104,6 +106,7 @@ struct	s_param
 	void	*mlx;
 	void	*win;
 	char	**map;
+	t_asset	*a;
 };
 
 /*================MAP================*/
@@ -114,7 +117,9 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
-void	ft_init_map(t_data *data, char **map);
+void	ft_init_map(t_data *d, char **map);
+void	ft_init_assets(void *mlx, t_asset *a, t_data *d);
+void	ft_free_assets(void *mlx, t_asset *a);
 
 /*===============ERROR===============*/
 
