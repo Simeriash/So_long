@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 05:50:16 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/28 07:58:02 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/31 09:19:03 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ static void	ft_free(char **map)
 
 static void	ft_fill_map(char **map, int x, int y)
 {
-	if(map[x][y] == '1')
+	if (map[x][y] == '1')
 		return ;
 	map[x][y] = '1';
 	ft_fill_map(map, x, y + 1);
 	ft_fill_map(map, x, y - 1);
 	ft_fill_map(map, x + 1, y);
 	ft_fill_map(map, x - 1, y);
-
 	return ;
 }
 

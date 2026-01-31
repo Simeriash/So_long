@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/30 16:52:35 by julauren         ###   ########.fr       */
+/*   Updated: 2026/01/31 09:16:59 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ struct	s_data
 {
 	int		x;
 	int		y;
+	int		width;
+	int		height;
 	char	*corner_1;
 	char	*corner_2;
 	char	*corner_3;
@@ -64,6 +66,44 @@ struct	s_data
 	char	*exit_close;
 	char	*exit_open;
 	char	*sapphire;
+};
+
+typedef struct s_asset	t_asset;
+struct	s_asset
+{
+	void	*corner_1;
+	void	*corner_2;
+	void	*corner_3;
+	void	*corner_4;
+	void	*border_top_1;
+	void	*border_top_2;
+	void	*border_right_1;
+	void	*border_right_2;
+	void	*border_botttom_1;
+	void	*border_botttom_2;
+	void	*border_left_1;
+	void	*border_left_2;
+	void	*wall;
+	void	*ground;
+	void	*tree_1;
+	void	*tree_2;
+	void	*tree_3;
+	void	*tree_4;
+	void	*player_1;
+	void	*player_2;
+	void	*player_3;
+	void	*player_4;
+	void	*exit_close;
+	void	*exit_open;
+	void	*sapphire;
+};
+
+typedef struct s_param	t_param;
+struct	s_param
+{
+	void	*mlx;
+	void	*win;
+	char	**map;
 };
 
 /*================MAP================*/

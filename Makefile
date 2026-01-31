@@ -9,7 +9,7 @@ LIBFT := src/Libft/libft.a
 
 MINILIBX := minilibx-linux/libmlx.a
 
-SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c ft_display.c
+SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c ft_display.c ft_map_initialisation.c
 
 SRC_DIR := src/
 SRC := $(addprefix $(SRC_DIR), $(SOURCES))
@@ -24,7 +24,7 @@ all : $(NAME)
 $(NAME) : $(OBJ_DIR) $(OBJ)
 	$(MAKE) -C minilibx-linux/
 	$(MAKE) -C src/Libft
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MINILIBX) -o $@ -lXext -lX11 -lm -lz
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MINILIBX) -o $@ -Imlx_linux -lXext -lX11 -lm -lz
 
 $(OBJ_DIR) :
 	mkdir -p $(OBJ_DIR)
