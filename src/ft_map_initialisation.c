@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:03:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 10:21:38 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 12:20:06 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 static void	ft_init_assets(void *mlx, t_asset *a, t_data *d)
 {
-	a->corner_1 = mlx_xpm_file_to_image(mlx, d->corner_1, &a->width, &a->height);
-	a->corner_2 = mlx_xpm_file_to_image(mlx, d->corner_2, &a->width, &a->height);
-	a->corner_3 = mlx_xpm_file_to_image(mlx, d->corner_3, &a->width, &a->height);
-	a->corner_4 = mlx_xpm_file_to_image(mlx, d->corner_4, &a->width, &a->height);
-	a->top_1 = mlx_xpm_file_to_image(mlx, d->top_1, &a->width, &a->height);
-	a->top_2 = mlx_xpm_file_to_image(mlx, d->top_2, &a->width, &a->height);
-	a->right_1 = mlx_xpm_file_to_image(mlx, d->right_1, &a->width, &a->height);
-	a->right_2 = mlx_xpm_file_to_image(mlx, d->right_2, &a->width, &a->height);
-	a->botttom_1 = mlx_xpm_file_to_image(mlx, d->botttom_1, &a->width, &a->height);
-	a->botttom_2 = mlx_xpm_file_to_image(mlx, d->botttom_2, &a->width, &a->height);
-	a->left_1 = mlx_xpm_file_to_image(mlx, d->left_1, &a->width, &a->height);
-	a->left_2 = mlx_xpm_file_to_image(mlx, d->left_2, &a->width, &a->height);
-	a->wall = mlx_xpm_file_to_image(mlx, d->wall, &a->width, &a->height);
-	a->ground = mlx_xpm_file_to_image(mlx, d->ground, &a->width, &a->height);
-	a->tree_1 = mlx_xpm_file_to_image(mlx, d->tree_1, &a->width, &a->height);
-	a->tree_2 = mlx_xpm_file_to_image(mlx, d->tree_2, &a->width, &a->height);
-	a->tree_3 = mlx_xpm_file_to_image(mlx, d->tree_3, &a->width, &a->height);
-	a->tree_4 = mlx_xpm_file_to_image(mlx, d->tree_4, &a->width, &a->height);
-	a->player_1 = mlx_xpm_file_to_image(mlx, d->player_1, &a->width, &a->height);
-	a->player_2 = mlx_xpm_file_to_image(mlx, d->player_2, &a->width, &a->height);
-	a->player_3 = mlx_xpm_file_to_image(mlx, d->player_3, &a->width, &a->height);
-	a->player_4 = mlx_xpm_file_to_image(mlx, d->player_4, &a->width, &a->height);
-	a->exit_close = mlx_xpm_file_to_image(mlx, d->exit_close, &a->width, &a->height);
-	a->exit_open = mlx_xpm_file_to_image(mlx, d->exit_open, &a->width, &a->height);
-	a->sapphire = mlx_xpm_file_to_image(mlx, d->sapphire, &a->width, &a->height);
+	a->corner_1 = mlx_xpm_file_to_image(mlx, d->corner_1, &a->w, &a->h);
+	a->corner_2 = mlx_xpm_file_to_image(mlx, d->corner_2, &a->w, &a->h);
+	a->corner_3 = mlx_xpm_file_to_image(mlx, d->corner_3, &a->w, &a->h);
+	a->corner_4 = mlx_xpm_file_to_image(mlx, d->corner_4, &a->w, &a->h);
+	a->top_1 = mlx_xpm_file_to_image(mlx, d->top_1, &a->w, &a->h);
+	a->top_2 = mlx_xpm_file_to_image(mlx, d->top_2, &a->w, &a->h);
+	a->right_1 = mlx_xpm_file_to_image(mlx, d->right_1, &a->w, &a->h);
+	a->right_2 = mlx_xpm_file_to_image(mlx, d->right_2, &a->w, &a->h);
+	a->botttom_1 = mlx_xpm_file_to_image(mlx, d->botttom_1, &a->w, &a->h);
+	a->botttom_2 = mlx_xpm_file_to_image(mlx, d->botttom_2, &a->w, &a->h);
+	a->left_1 = mlx_xpm_file_to_image(mlx, d->left_1, &a->w, &a->h);
+	a->left_2 = mlx_xpm_file_to_image(mlx, d->left_2, &a->w, &a->h);
+	a->wall = mlx_xpm_file_to_image(mlx, d->wall, &a->w, &a->h);
+	a->ground = mlx_xpm_file_to_image(mlx, d->ground, &a->w, &a->h);
+	a->tree_1 = mlx_xpm_file_to_image(mlx, d->tree_1, &a->w, &a->h);
+	a->tree_2 = mlx_xpm_file_to_image(mlx, d->tree_2, &a->w, &a->h);
+	a->tree_3 = mlx_xpm_file_to_image(mlx, d->tree_3, &a->w, &a->h);
+	a->tree_4 = mlx_xpm_file_to_image(mlx, d->tree_4, &a->w, &a->h);
+	a->player_1 = mlx_xpm_file_to_image(mlx, d->player_1, &a->w, &a->h);
+	a->player_2 = mlx_xpm_file_to_image(mlx, d->player_2, &a->w, &a->h);
+	a->player_3 = mlx_xpm_file_to_image(mlx, d->player_3, &a->w, &a->h);
+	a->player_4 = mlx_xpm_file_to_image(mlx, d->player_4, &a->w, &a->h);
+	a->exit_close = mlx_xpm_file_to_image(mlx, d->exit_close, &a->w, &a->h);
+	a->exit_open = mlx_xpm_file_to_image(mlx, d->exit_open, &a->w, &a->h);
+	a->sapphire = mlx_xpm_file_to_image(mlx, d->sapphire, &a->w, &a->h);
 }
 
 static void	ft_init_map_1(t_data *d)
@@ -129,10 +129,10 @@ void	ft_init_map(t_param *p, t_data *d)
 		ft_init_map_1(d);
 	else
 		ft_init_map_2(d);
-	d->width = 32 * d->x;
-	d->height = 32 * d->y;
-	p->a->height = 32;
-	p->a->width = 32;
+	d->w = 32 * d->x;
+	d->h = 32 * d->y;
+	p->a->h = 32;
+	p->a->w = 32;
 	ft_init_assets(p->mlx, p->a, d);
 	ft_ctrl(p, p->a);
 }

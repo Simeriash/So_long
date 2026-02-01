@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 10:00:58 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 12:19:14 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 # endif
 
-typedef struct s_ch	t_ch;
+typedef struct s_ch		t_ch;
 struct	s_ch
 {
 	int	c;
@@ -39,8 +39,8 @@ struct	s_data
 {
 	int		x;
 	int		y;
-	int		width;
-	int		height;
+	int		w;	//width
+	int		h;	//height
 	char	*corner_1;
 	char	*corner_2;
 	char	*corner_3;
@@ -71,8 +71,8 @@ struct	s_data
 typedef struct s_asset	t_asset;
 struct	s_asset
 {
-	int		width;
-	int		height;
+	int		w;	//width
+	int		h;	//height
 	void	*corner_1;
 	void	*corner_2;
 	void	*corner_3;
@@ -117,7 +117,7 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
-void	ft_init_map(t_param *p,t_data *d);
+void	ft_init_map(t_param *p, t_data *d);
 void	ft_exit_so_long(t_param *p, int exit_code);
 
 /*===============ERROR===============*/

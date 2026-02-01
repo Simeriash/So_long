@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/01/27 16:48:17 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 12:47:42 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ static void	ft_map_surround(char **map, int x, int y)
 {
 	int	i;
 
+	if (x > 60 || y > 30)
+		ft_error_map(map, 1);
 	i = 0;
 	x--;
 	y--;
@@ -120,7 +122,7 @@ char	**ft_create_map(char *str)
 	if (!map)
 		exit(EXIT_FAILURE);
 	len = ft_strlen(map[0]);
-	i = 1;
+	i = 0;
 	while (map[++i])
 	{
 		if (len != ft_strlen(map[i])

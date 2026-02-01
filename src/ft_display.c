@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:04:17 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 10:01:18 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 12:19:24 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ void	ft_display(char **map)
 		ft_exit_so_long(&p, 1);
 	p.a = &a;
 	ft_init_map(&p, &d);
-	p.win = mlx_new_window(p.mlx, d.width, d.height, "\\\\_42_//");
+	p.win = mlx_new_window(p.mlx, d.w, d.h, "\\\\_42_//");
 	if (!(p.win))
 		ft_exit_so_long(&p, 1);
 	mlx_put_image_to_window(p.mlx, p.win, a.corner_1, 0, 0);
 	mlx_put_image_to_window(p.mlx, p.win, a.top_1, 32, 0);
 	mlx_put_image_to_window(p.mlx, p.win, a.top_2, 64, 0);
-	mlx_put_image_to_window(p.mlx, p.win, a.corner_2, d.width - 32, 0);
-	mlx_put_image_to_window(p.mlx, p.win, a.right_1, d.width - 32, 32);
-	mlx_put_image_to_window(p.mlx, p.win, a.right_2, d.width - 32, 64);
-	mlx_put_image_to_window(p.mlx, p.win, a.corner_3, d.width - 32, d.height - 32);
-	mlx_put_image_to_window(p.mlx, p.win, a.botttom_1, d.width - 96, d.height - 32);
-	mlx_put_image_to_window(p.mlx, p.win, a.botttom_2, d.width - 64, d.height - 32);
-	mlx_put_image_to_window(p.mlx, p.win, a.corner_4, 0, d.height - 32);
-	mlx_put_image_to_window(p.mlx, p.win, a.left_1, 0, d.height - 96);
-	mlx_put_image_to_window(p.mlx, p.win, a.left_2, 0, d.height - 64);
+	mlx_put_image_to_window(p.mlx, p.win, a.corner_2, d.w - 32, 0);
+	mlx_put_image_to_window(p.mlx, p.win, a.right_1, d.w - 32, 32);
+	mlx_put_image_to_window(p.mlx, p.win, a.right_2, d.w - 32, 64);
+	mlx_put_image_to_window(p.mlx, p.win, a.corner_3, d.w - 32, d.h - 32);
+	mlx_put_image_to_window(p.mlx, p.win, a.botttom_1, d.w - 96, d.h - 32);
+	mlx_put_image_to_window(p.mlx, p.win, a.botttom_2, d.w - 64, d.h - 32);
+	mlx_put_image_to_window(p.mlx, p.win, a.corner_4, 0, d.h - 32);
+	mlx_put_image_to_window(p.mlx, p.win, a.left_1, 0, d.h - 96);
+	mlx_put_image_to_window(p.mlx, p.win, a.left_2, 0, d.h - 64);
 	mlx_put_image_to_window(p.mlx, p.win, a.ground, 32, 32);
 	mlx_put_image_to_window(p.mlx, p.win, a.ground, 64, 32);
 	mlx_put_image_to_window(p.mlx, p.win, a.ground, 96, 32);

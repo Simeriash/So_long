@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:29:23 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 11:41:59 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 11:48:47 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ static void	ft_free_assets(void *mlx, t_asset *a)
 		mlx_destroy_image(mlx, a->left_2);
 	ft_free_assets_continued(mlx, a);
 }
-
 
 void	ft_exit_so_long(t_param *p, int exit_code)
 {
