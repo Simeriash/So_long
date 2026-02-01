@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 08:39:44 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 10:00:58 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,8 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
-void	ft_init_map(t_data *d, char **map);
-void	ft_init_assets(void *mlx, t_asset *a, t_data *d);
-void	ft_free_assets(void *mlx, t_asset *a);
+void	ft_init_map(t_param *p,t_data *d);
+void	ft_exit_so_long(t_param *p, int exit_code);
 
 /*===============ERROR===============*/
 
