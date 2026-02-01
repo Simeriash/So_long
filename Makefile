@@ -1,7 +1,7 @@
 NAME := so_long
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror -g #-fsanitize=address
+CFLAGS := -Wall -Wextra -Werror -g # -fsanitize=address
 
 HEADER := so_long.h
 
@@ -9,8 +9,8 @@ LIBFT := src/Libft/libft.a
 
 MINILIBX := minilibx-linux/libmlx.a
 
-SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c ft_display.c ft_map_initialisation.c\
-			ft_exit_so_long.c
+SOURCES := ft_so_long.c ft_error_management.c ft_create_map.c ft_tabdup.c ft_pathfinding.c ft_tabchr.c ft_free_tab.c ft_display.c ft_init_assets.c\
+			ft_exit_so_long.c ft_init_map.c
 
 SRC_DIR := src/
 SRC := $(addprefix $(SRC_DIR), $(SOURCES))
@@ -41,7 +41,7 @@ clean :
 
 fclean :
 	rm -rf $(NAME)
-	# $(MAKE) -C minilibx-linux/ -B clean
+	$(MAKE) -C minilibx-linux/ -B clean
 	$(MAKE) -C src/Libft -B fclean
 
 re : fclean all

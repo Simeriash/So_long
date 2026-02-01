@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map_initialisation.c                            :+:      :+:    :+:   */
+/*   ft_init_assets.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:03:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 12:20:06 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 16:12:25 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void	ft_init_assets(void *mlx, t_asset *a, t_data *d)
+static void	ft_files_to_image(void *mlx, t_asset *a, t_data *d)
 {
 	a->corner_1 = mlx_xpm_file_to_image(mlx, d->corner_1, &a->w, &a->h);
 	a->corner_2 = mlx_xpm_file_to_image(mlx, d->corner_2, &a->w, &a->h);
@@ -116,13 +116,13 @@ static void	ft_ctrl(t_param *p, t_asset *a)
 	}
 }
 
-void	ft_init_map(t_param *p, t_data *d)
+void	ft_init_assets(t_param *p, t_data *d, char **map)
 {
 	int	i;
 
-	d->x = ft_strlen(p->map[0]);
+	d->x = ft_strlen((map)[0]);
 	i = 0;
-	while (p->map[i])
+	while ((map)[i])
 		i++;
 	d->y = i;
 	if (((d->x) % 2 == 0) && ((d->y) % 2 == 0))
@@ -133,6 +133,8 @@ void	ft_init_map(t_param *p, t_data *d)
 	d->h = 32 * d->y;
 	p->a->h = 32;
 	p->a->w = 32;
-	ft_init_assets(p->mlx, p->a, d);
+	ft_files_to_image(p->mlx, p->a, d);
 	ft_ctrl(p, p->a);
+	// p->x = d->x;
+	// p->y = d->y;
 }

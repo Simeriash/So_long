@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_init_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:41:16 by julauren         ###   ########.fr       */
+/*   Created: 2026/02/01 13:04:54 by julauren          #+#    #+#             */
+/*   Updated: 2026/02/01 16:11:52 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int ac, char **av)
-{
-	t_param	p;
+// static void	ft_map_modification(char **map, int x, int y)
+// {
+// 	int	i;
+// 	int	j;
 
-	ft_error_args(ac, av);
-	p.map = ft_create_map(av[1]);
-	ft_pathfinding(p.map);
-	ft_display(p.map);
+// 	(void)map;
+// 	i = 1;
+// 	j = 1;
+// 	x--;
+// 	y--;
+// 	ft_printf("%d\t%d\n", x, y);
+
+// }
+
+void	ft_init_map(t_param *p, t_data *d, char **map)
+{
+	ft_init_assets(p, d, map);
+	// ft_printf("%d\t%d\n", p->x, p->y);
+	// ft_map_modification(p->map, p->x, p->y);
+	// ft_printf("%d\t%d\n", p->x, p->y);
 }

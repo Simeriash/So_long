@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 12:19:14 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:25:25 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@
 typedef struct s_ch		t_ch;
 struct	s_ch
 {
-	int	c;
-	int	e;
-	int	p;
-	int	es;
-	int	o;
+	int	c;	//collectible
+	int	e;	//exit
+	int	p;	//player
+	int	es;	//empty space
+	int	o;	//others than '0', '1', 'C', 'P' & 'E'
 };
 
 typedef struct s_data	t_data;
 struct	s_data
 {
-	int		x;
-	int		y;
-	int		w;	//width
-	int		h;	//height
+	int		x;	//tab indice
+	int		y;	//tab indice
+	int		w;	//width of screen in px
+	int		h;	//height of screen in px
 	char	*corner_1;
 	char	*corner_2;
 	char	*corner_3;
@@ -71,8 +71,8 @@ struct	s_data
 typedef struct s_asset	t_asset;
 struct	s_asset
 {
-	int		w;	//width
-	int		h;	//height
+	int		w;	//width of each image = 32 px
+	int		h;	//height of each image = 32 px
 	void	*corner_1;
 	void	*corner_2;
 	void	*corner_3;
@@ -100,14 +100,15 @@ struct	s_asset
 	void	*sapphire;
 };
 
-typedef struct s_param	t_param;
-struct	s_param
+typedef struct s_param
 {
+	int		x;	//tab indice
+	int		y;	//tab indice
 	void	*mlx;
 	void	*win;
 	char	**map;
 	t_asset	*a;
-};
+}	t_param;
 
 /*================MAP================*/
 
@@ -117,7 +118,8 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
-void	ft_init_map(t_param *p, t_data *d);
+void	ft_init_map(t_param *p, t_data *d, char **map);
+void	ft_init_assets(t_param *p, t_data *d, char **map);
 void	ft_exit_so_long(t_param *p, int exit_code);
 
 /*===============ERROR===============*/

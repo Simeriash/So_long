@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 12:47:42 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:27:24 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_read_file_map(char **readed_file, int fd)
 	ssize_t	read_file;
 
 	*readed_file = NULL;
-	buffer = malloc(sizeof(*buffer) * (BUFFER_SIZE_SL + 1));
+	buffer = malloc(sizeof(char) * (BUFFER_SIZE_SL + 1));
 	if (!buffer)
 		ft_exit(buffer, &*readed_file, 0);
 	read_file = 1;

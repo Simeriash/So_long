@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:29:23 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 11:48:47 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:43:19 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	ft_free_assets_continued(void *mlx, t_asset *a)
 	if (a->exit_open)
 		mlx_destroy_image(mlx, a->exit_open);
 }
-
+//
 static void	ft_free_assets(void *mlx, t_asset *a)
 {
 	if (a->corner_1)
@@ -81,7 +81,6 @@ void	ft_exit_so_long(t_param *p, int exit_code)
 		mlx_destroy_display(p->mlx);
 		free(p->mlx);
 	}
-	ft_free_tab(p->map);
 	if (exit_code == 0)
 		exit(EXIT_SUCCESS);
 	else
