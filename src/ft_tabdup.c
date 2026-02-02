@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 04:51:19 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 11:22:09 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/02 14:31:48 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,19 @@ static void	ft_copy(char **tab, char **tab_dup)
 	int	i;
 	int	j;
 
-	i = 0;
 	j = 0;
-	while (tab[i])
+	while (tab[j])
 	{
-		j = 0;
-		while (tab[i][j])
+		i = 0;
+		while (tab[j][i])
 		{
-			tab_dup[i][j] = tab[i][j];
-			j++;
+			tab_dup[j][i] = tab[j][i];
+			i++;
 		}
-		tab_dup[i][j] = '\0';
-		i++;
+		tab_dup[j][i] = '\0';
+		j++;
 	}
-	tab_dup[i] = NULL;
+	tab_dup[j] = NULL;
 }
 
 char	**ft_tabdup(char **tab)

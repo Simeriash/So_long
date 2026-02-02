@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:25:25 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/02 17:15:01 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,31 @@
 
 # endif
 
-typedef struct s_ch		t_ch;
-struct	s_ch
+typedef struct s_ch
 {
 	int	c;	//collectible
 	int	e;	//exit
 	int	p;	//player
 	int	es;	//empty space
 	int	o;	//others than '0', '1', 'C', 'P' & 'E'
-};
+}	t_ch;
 
-typedef struct s_data	t_data;
-struct	s_data
+typedef struct s_data
 {
 	int		x;	//tab indice
 	int		y;	//tab indice
 	int		w;	//width of screen in px
 	int		h;	//height of screen in px
-	char	*corner_1;
-	char	*corner_2;
-	char	*corner_3;
-	char	*corner_4;
+	char	*cor_1;
+	char	*cor_2;
+	char	*cor_3;
+	char	*cor_4;
 	char	*top_1;
 	char	*top_2;
 	char	*right_1;
 	char	*right_2;
-	char	*botttom_1;
-	char	*botttom_2;
+	char	*bot_1;
+	char	*bot_2;
 	char	*left_1;
 	char	*left_2;
 	char	*wall;
@@ -59,30 +57,29 @@ struct	s_data
 	char	*tree_2;
 	char	*tree_3;
 	char	*tree_4;
-	char	*player_1;
-	char	*player_2;
-	char	*player_3;
-	char	*player_4;
-	char	*exit_close;
-	char	*exit_open;
-	char	*sapphire;
-};
+	char	*p_1;
+	char	*p_2;
+	char	*p_3;
+	char	*p_4;
+	char	*e_c;
+	char	*e_o;
+	char	*sapp;
+}	t_data;
 
-typedef struct s_asset	t_asset;
-struct	s_asset
+typedef struct s_asset
 {
 	int		w;	//width of each image = 32 px
 	int		h;	//height of each image = 32 px
-	void	*corner_1;
-	void	*corner_2;
-	void	*corner_3;
-	void	*corner_4;
+	void	*cor_1;
+	void	*cor_2;
+	void	*cor_3;
+	void	*cor_4;
 	void	*top_1;
 	void	*top_2;
 	void	*right_1;
 	void	*right_2;
-	void	*botttom_1;
-	void	*botttom_2;
+	void	*bot_1;
+	void	*bot_2;
 	void	*left_1;
 	void	*left_2;
 	void	*wall;
@@ -91,14 +88,14 @@ struct	s_asset
 	void	*tree_2;
 	void	*tree_3;
 	void	*tree_4;
-	void	*player_1;
-	void	*player_2;
-	void	*player_3;
-	void	*player_4;
-	void	*exit_close;
-	void	*exit_open;
-	void	*sapphire;
-};
+	void	*p_1;
+	void	*p_2;
+	void	*p_3;
+	void	*p_4;
+	void	*e_c;
+	void	*e_o;
+	void	*sapp;
+}	t_asset;
 
 typedef struct s_param
 {
@@ -118,9 +115,10 @@ char	**ft_tabdup(char **tab);
 int		ft_tabchr(char **tab, int c, int *i, int *j);
 void	ft_free_tab(char **tab);
 void	ft_display(char **map);
-void	ft_init_map(t_param *p, t_data *d, char **map);
-void	ft_init_assets(t_param *p, t_data *d, char **map);
 void	ft_exit_so_long(t_param *p, int exit_code);
+void	ft_init_map(t_param *p, t_data *d);
+void	ft_init_assets(t_param *p, t_data *d);
+void	ft_map(t_param *p, int w, int h);
 
 /*===============ERROR===============*/
 
