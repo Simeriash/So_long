@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 04:51:19 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:25:19 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/02 11:22:09 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ char	**ft_tabdup(char **tab)
 	line = 0;
 	while (tab[line])
 		line++;
-	tab_dup = malloc(sizeof(char *) * (line + 1));
+	tab_dup = malloc(sizeof(*tab_dup) * (line + 1));
 	if (!tab_dup)
 		return (NULL);
 	i = 0;
 	while (i < line)
 	{
-		tab_dup[i] = malloc(sizeof(char) * (ft_strlen(tab[i]) + 1));
+		tab_dup[i] = malloc(sizeof(**tab_dup) * (ft_strlen(tab[i]) + 1));
 		if (!tab_dup[i])
 		{
 			ft_free(tab_dup, i);

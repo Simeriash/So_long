@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:31:15 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:41:16 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/02 11:10:50 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	t_param	p;
+	char	**map;
 
 	ft_error_args(ac, av);
-	p.map = ft_create_map(av[1]);
-	ft_pathfinding(p.map);
-	ft_display(p.map);
+	map = ft_create_map(av[1]);
+	ft_pathfinding(map);
+	ft_display(map);
 }

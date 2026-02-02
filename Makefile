@@ -31,17 +31,17 @@ $(OBJ_DIR) :
 	mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 clean :
 	rm -rf $(OBJ)
 	rm -rf $(OBJ_DIR)
 	# $(MAKE) -C minilibx-linux/ -B clean
-	$(MAKE) -C src/Libft -B clean
+	# $(MAKE) -C src/Libft -B clean
 
-fclean :
+fclean : clean
 	rm -rf $(NAME)
-	$(MAKE) -C minilibx-linux/ -B clean
-	$(MAKE) -C src/Libft -B fclean
+	# $(MAKE) -C minilibx-linux/ -B clean
+	# $(MAKE) -C src/Libft -B fclean
 
 re : fclean all

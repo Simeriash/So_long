@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:29:23 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:43:19 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 18:57:34 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	ft_exit_so_long(t_param *p, int exit_code)
 		mlx_destroy_display(p->mlx);
 		free(p->mlx);
 	}
+	ft_free_tab(p->map);
 	if (exit_code == 0)
 		exit(EXIT_SUCCESS);
 	else

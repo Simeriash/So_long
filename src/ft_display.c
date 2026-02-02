@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:04:17 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:48:36 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/01 18:55:12 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_display(char **map)
 	t_asset	a;
 
 	p.mlx = mlx_init();
-	// p.map = map;
+	p.map = map;
 	if (!(p.mlx))
 		ft_exit_so_long(&p, 1);
 	p.a = &a;

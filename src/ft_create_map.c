@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/01 17:27:24 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/02 11:17:47 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	ft_exit(char *buffer, char **readed_file, int fd)
 		free(buffer);
 		close(fd);
 	}
-	if (*readed_file)
-		free(*readed_file);
+	if (readed_file)
+		free(readed_file);
 	exit(EXIT_FAILURE);
 }
 
@@ -31,21 +31,21 @@ static void	ft_read_file_map(char **readed_file, int fd)
 	ssize_t	read_file;
 
 	*readed_file = NULL;
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE_SL + 1));
+	buffer = malloc(sizeof(*buffer) * (BUFFER_SIZE_SL + 1));
 	if (!buffer)
-		ft_exit(buffer, &*readed_file, 0);
+		ft_exit(buffer, readed_file, 0);
 	read_file = 1;
 	while (read_file)
 	{
 		read_file = read(fd, buffer, BUFFER_SIZE_SL);
 		if (read_file == -1 || (read_file == 0 && *readed_file == NULL))
-			ft_exit(buffer, &*readed_file, fd);
+			ft_exit(buffer, readed_file, fd);
 		if (read_file == 0)
 			break ;
 		buffer[read_file] = '\0';
 		tmp = ft_strjoin(*readed_file, buffer);
 		if (!tmp)
-			ft_exit(buffer, &*readed_file, fd);
+			ft_exit(buffer, readed_file, fd);
 		free(*readed_file);
 		*readed_file = tmp;
 	}
@@ -61,7 +61,7 @@ static void	ft_check_map(char *str, char **map_file)
 
 	ft_bzero(&ch, sizeof(ch));
 	fd = open(str, O_RDONLY);
-	ft_read_file_map(&*map_file, fd);
+	ft_read_file_map(map_file, fd);
 	i = -1;
 	while ((*map_file)[++i] != '\0')
 	{
@@ -79,7 +79,7 @@ static void	ft_check_map(char *str, char **map_file)
 			(ch.o)++;
 	}
 	if (ch.e != 1 || ch.p != 1 || ch.c == 0 || ch.es == 0 || ch.o != 0)
-		ft_error_characters(&*map_file);
+		ft_error_characters(map_file);
 }
 
 static void	ft_map_surround(char **map, int x, int y)
