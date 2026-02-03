@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:03:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 17:19:56 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:28:24 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void	ft_init_map_1(t_data *d)
 	d->p_4 = "assets/map_1/player_4.xpm";
 	d->e_c = "assets/exit_close.xpm";
 	d->e_o = "assets/exit_open.xpm";
-	d->sapp = "assets/sapphire.xpm";
+	d->sapp = "assets/map_1/sapphire.xpm";
 }
 
 static void	ft_init_map_2(t_data *d)
@@ -96,7 +96,7 @@ static void	ft_init_map_2(t_data *d)
 	d->p_4 = "assets/map_2/player_4.xpm";
 	d->e_c = "assets/exit_close.xpm";
 	d->e_o = "assets/exit_open.xpm";
-	d->sapp = "assets/sapphire.xpm";
+	d->sapp = "assets/map_2/sapphire.xpm";
 }
 
 static void	ft_ctrl(t_param *p, t_asset *a)
