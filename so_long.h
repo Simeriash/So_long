@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 17:15:01 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:26:11 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# ifndef BUFFER_SIZE_SL
-#  define BUFFER_SIZE_SL 50
-
-# endif
+# define BUFFER_SIZE_SL 50
 
 typedef struct s_ch
 {
@@ -101,6 +98,8 @@ typedef struct s_param
 {
 	int		x;	//tab indice
 	int		y;	//tab indice
+	int		w;	//width of screen in px
+	int		h;	//height of screen in px
 	void	*mlx;
 	void	*win;
 	char	**map;
@@ -118,7 +117,7 @@ void	ft_display(char **map);
 void	ft_exit_so_long(t_param *p, int exit_code);
 void	ft_init_map(t_param *p, t_data *d);
 void	ft_init_assets(t_param *p, t_data *d);
-void	ft_map(t_param *p, int w, int h);
+void	ft_map(t_param *p);
 
 /*===============ERROR===============*/
 

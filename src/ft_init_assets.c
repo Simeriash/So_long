@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:03:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 13:28:24 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:25:06 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,4 +137,6 @@ void	ft_init_assets(t_param *p, t_data *d)
 	ft_ctrl(p, p->a);
 	p->x = d->x;
 	p->y = d->y;
+	p->w = d->w;
+	p->h = d->h;
 }

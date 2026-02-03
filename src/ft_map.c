@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:54:40 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 13:36:53 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:27:43 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,18 @@ static void	ft_fill_map(t_param *p, int i, int j)
 	else if (p->map[j][i] == 'C')
 		mlx_put_image_to_window(p->mlx, p->win, p->a->sapp, 32 * i, 32 * j);
 	else if (p->map[j][i] == 'P')
-	{
-		mlx_put_image_to_window(p->mlx, p->win, p->a->ground, 32 * i, 32 * j);
-		// mlx_put_image_to_window(p->mlx, p->win, p->a->p_1, 32 * i, 32 * j);
-	}
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_1, 32 * i, 32 * j);
 }
 
-void	ft_map(t_param *p, int w, int h)
+void	ft_map(t_param *p)
 {
 	int	i;
 	int	j;
+	int	w;
+	int	h;
 
-	w -= 32;
-	h -= 32;
+	w = p->w - 32;
+	h = p->h - 32;
 	mlx_put_image_to_window(p->mlx, p->win, p->a->cor_1, 0, 0);
 	mlx_put_image_to_window(p->mlx, p->win, p->a->cor_2, w, 0);
 	mlx_put_image_to_window(p->mlx, p->win, p->a->cor_3, w, h);
