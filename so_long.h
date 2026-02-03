@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 14:26:11 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:55:34 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,13 @@ typedef struct s_param
 	int		y;	//tab indice
 	int		w;	//width of screen in px
 	int		h;	//height of screen in px
+	char	player;	//type of
+	int		p_x;	//player position
+	int		p_y;	//player position
+	int		e_x;	//exit position
+	int		e_y;	//exit position
+	char	exit;	//type of
+	int		c;	//nb of collectible
 	void	*mlx;
 	void	*win;
 	char	**map;
@@ -118,6 +125,10 @@ void	ft_exit_so_long(t_param *p, int exit_code);
 void	ft_init_map(t_param *p, t_data *d);
 void	ft_init_assets(t_param *p, t_data *d);
 void	ft_map(t_param *p);
+void	ft_key_w(t_param *p);
+void	ft_key_a(t_param *p);
+void	ft_key_s(t_param *p);
+void	ft_key_d(t_param *p);
 
 /*===============ERROR===============*/
 

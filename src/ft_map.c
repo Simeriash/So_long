@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:54:40 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 14:27:43 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 17:00:47 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,18 @@ static void	ft_border_east_west(t_param *p, int w, int h)
 	}
 }
 
+static void	ft_player(t_param *p, int i, int j)
+{
+	if (p->player == 's')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_1, 32 * i, 32 * j);
+	if (p->player == 'w')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_2, 32 * i, 32 * j);
+	if (p->player == 'a')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_3, 32 * i, 32 * j);
+	if (p->player == 'd')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_4, 32 * i, 32 * j);
+}
+
 static void	ft_fill_map(t_param *p, int i, int j)
 {
 	if (p->map[j][i] == '0')
@@ -76,10 +88,12 @@ static void	ft_fill_map(t_param *p, int i, int j)
 		mlx_put_image_to_window(p->mlx, p->win, p->a->tree_4, 32 * i, 32 * j);
 	else if (p->map[j][i] == 'E')
 		mlx_put_image_to_window(p->mlx, p->win, p->a->e_c, 32 * i, 32 * j);
+	else if (p->map[j][i] == 'e')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->e_o, 32 * i, 32 * j);
 	else if (p->map[j][i] == 'C')
 		mlx_put_image_to_window(p->mlx, p->win, p->a->sapp, 32 * i, 32 * j);
 	else if (p->map[j][i] == 'P')
-		mlx_put_image_to_window(p->mlx, p->win, p->a->p_1, 32 * i, 32 * j);
+		ft_player(p, i, j);
 }
 
 void	ft_map(t_param *p)

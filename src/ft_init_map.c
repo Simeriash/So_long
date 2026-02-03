@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 13:04:54 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 16:43:30 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:55:49 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,6 @@ void	ft_init_map(t_param *p, t_data *d)
 {
 	ft_init_assets(p, d);
 	ft_map_modification(p->map, p->x, p->y);
+	p->player = 's';
+	p->exit = 'E';
 }
