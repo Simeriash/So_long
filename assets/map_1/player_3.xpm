@@ -1,7 +1,7 @@
 /* XPM */
 static char * player_3_xpm[] = {
 "32 32 4 1",
-" 	c None",
+" 	c #FFFF8B",
 ".	c #000000",
 "+	c #10AD42",
 "@	c #FFBD8C",
