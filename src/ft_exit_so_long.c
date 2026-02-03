@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:29:23 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 13:45:47 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:33:19 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,30 @@ static void	ft_free_assets_continued(void *mlx, t_asset *a)
 		mlx_destroy_image(mlx, a->tree_3);
 	if (a->tree_4)
 		mlx_destroy_image(mlx, a->tree_4);
-	if (a->player_1)
-		mlx_destroy_image(mlx, a->player_1);
-	if (a->player_2)
-		mlx_destroy_image(mlx, a->player_2);
-	if (a->player_3)
-		mlx_destroy_image(mlx, a->player_3);
-	if (a->player_4)
-		mlx_destroy_image(mlx, a->player_4);
-	if (a->exit_close)
-		mlx_destroy_image(mlx, a->exit_close);
-	if (a->exit_open)
-		mlx_destroy_image(mlx, a->exit_open);
+	if (a->p_1)
+		mlx_destroy_image(mlx, a->p_1);
+	if (a->p_2)
+		mlx_destroy_image(mlx, a->p_2);
+	if (a->p_3)
+		mlx_destroy_image(mlx, a->p_3);
+	if (a->p_4)
+		mlx_destroy_image(mlx, a->p_4);
+	if (a->e_c)
+		mlx_destroy_image(mlx, a->e_c);
+	if (a->e_o)
+		mlx_destroy_image(mlx, a->e_o);
 }
 
 static void	ft_free_assets(void *mlx, t_asset *a)
 {
-	if (a->corner_1)
-		mlx_destroy_image(mlx, a->corner_1);
-	if (a->corner_2)
-		mlx_destroy_image(mlx, a->corner_2);
-	if (a->corner_3)
-		mlx_destroy_image(mlx, a->corner_3);
-	if (a->corner_4)
-		mlx_destroy_image(mlx, a->corner_4);
+	if (a->cor_1)
+		mlx_destroy_image(mlx, a->cor_1);
+	if (a->cor_2)
+		mlx_destroy_image(mlx, a->cor_2);
+	if (a->cor_3)
+		mlx_destroy_image(mlx, a->cor_3);
+	if (a->cor_4)
+		mlx_destroy_image(mlx, a->cor_4);
 	if (a->top_1)
 		mlx_destroy_image(mlx, a->top_1);
 	if (a->top_2)
@@ -58,10 +58,10 @@ static void	ft_free_assets(void *mlx, t_asset *a)
 		mlx_destroy_image(mlx, a->right_1);
 	if (a->right_2)
 		mlx_destroy_image(mlx, a->right_2);
-	if (a->botttom_1)
-		mlx_destroy_image(mlx, a->botttom_1);
-	if (a->botttom_2)
-		mlx_destroy_image(mlx, a->botttom_2);
+	if (a->bot_1)
+		mlx_destroy_image(mlx, a->bot_1);
+	if (a->bot_2)
+		mlx_destroy_image(mlx, a->bot_2);
 	if (a->left_1)
 		mlx_destroy_image(mlx, a->left_1);
 	if (a->left_2)
@@ -74,8 +74,8 @@ void	ft_exit_so_long(t_param *p, int exit_code)
 	if (p->mlx)
 	{
 		ft_free_assets(p->mlx, p->a);
-		if (p->a->sapphire)
-			mlx_destroy_image(p->mlx, p->a->sapphire);
+		if (p->a->sapp)
+			mlx_destroy_image(p->mlx, p->a->sapp);
 		if (p->win)
 			mlx_destroy_window(p->mlx, p->win);
 		mlx_destroy_display(p->mlx);
