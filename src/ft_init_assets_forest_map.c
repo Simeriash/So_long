@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 12:36:44 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 13:00:51 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:38:36 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ static void	ft_init_2_be_continued(t_data *d)
 	d->p_e_2 = "assets/map_1/player_exit_2.xpm";
 	d->p_e_3 = "assets/map_1/player_exit_3.xpm";
 	d->p_e_4 = "assets/map_1/player_exit_4.xpm";
+	d->p_o_1 = "assets/map_1/player_escape_1.xpm";
+	d->p_o_2 = "assets/map_1/player_escape_2.xpm";
+	d->p_o_3 = "assets/map_1/player_escape_3.xpm";
+	d->p_o_4 = "assets/map_1/player_escape_4.xpm";
 }
 
 void	ft_init_assets_forest_map(t_data *d)

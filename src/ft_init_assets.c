@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:03:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 13:07:37 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:42:40 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ static void	ft_files_to_image_2_be_contined(void *mlx, t_asset *a, t_data *d)
 	a->p_e_2 = mlx_xpm_file_to_image(mlx, d->p_e_2, &a->w, &a->h);
 	a->p_e_3 = mlx_xpm_file_to_image(mlx, d->p_e_3, &a->w, &a->h);
 	a->p_e_4 = mlx_xpm_file_to_image(mlx, d->p_e_4, &a->w, &a->h);
+	a->p_o_1 = mlx_xpm_file_to_image(mlx, d->p_o_1, &a->w, &a->h);
+	a->p_o_2 = mlx_xpm_file_to_image(mlx, d->p_o_2, &a->w, &a->h);
+	a->p_o_3 = mlx_xpm_file_to_image(mlx, d->p_o_3, &a->w, &a->h);
+	a->p_o_4 = mlx_xpm_file_to_image(mlx, d->p_o_4, &a->w, &a->h);
 }
 
 static void	ft_files_to_image(void *mlx, t_asset *a, t_data *d)
@@ -61,7 +65,8 @@ static void	ft_ctrl(t_param *p, t_asset *a)
 		|| a->p_1 == NULL || a->p_2 == NULL || a->p_3 == NULL
 		|| a->p_4 == NULL || a->e_c == NULL || a->e_o == NULL
 		|| a->sapp == NULL || a->p_e_1 == NULL || a->p_e_2 == NULL
-		|| a->p_e_3 == NULL || a->p_e_4 == NULL)
+		|| a->p_e_3 == NULL || a->p_e_4 == NULL || a->p_o_1 == NULL
+		|| a->p_o_2 == NULL || a->p_o_3 == NULL || a->p_o_4 == NULL)
 	{
 		p->win = NULL;
 		ft_exit_so_long(p, 1);

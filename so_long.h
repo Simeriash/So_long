@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 14:58:45 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:37:44 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,10 @@ typedef struct s_data
 	char	*p_e_2;
 	char	*p_e_3;
 	char	*p_e_4;
+	char	*p_o_1;
+	char	*p_o_2;
+	char	*p_o_3;
+	char	*p_o_4;
 }	t_data;
 
 typedef struct s_asset
@@ -100,6 +104,10 @@ typedef struct s_asset
 	void	*p_e_2;
 	void	*p_e_3;
 	void	*p_e_4;
+	void	*p_o_1;
+	void	*p_o_2;
+	void	*p_o_3;
+	void	*p_o_4;
 }	t_asset;
 
 typedef struct s_param
