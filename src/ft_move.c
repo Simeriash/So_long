@@ -6,13 +6,13 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:22:20 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 17:03:52 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:44:24 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_key_w(t_param *p)
+static void	ft_key_w(t_param *p)
 {
 	if (p->player != 'w')
 		p->player = 'w';
@@ -29,7 +29,7 @@ void	ft_key_w(t_param *p)
 		p->map[p->e_y][p->e_x] = 'e';
 }
 
-void	ft_key_a(t_param *p)
+static void	ft_key_a(t_param *p)
 {
 	if (p->player != 'a')
 		p->player = 'a';
@@ -46,7 +46,7 @@ void	ft_key_a(t_param *p)
 		p->map[p->e_y][p->e_x] = 'e';
 }
 
-void	ft_key_s(t_param *p)
+static void	ft_key_s(t_param *p)
 {
 	if (p->player != 's')
 		p->player = 's';
@@ -63,7 +63,7 @@ void	ft_key_s(t_param *p)
 		p->map[p->e_y][p->e_x] = 'e';
 }
 
-void	ft_key_d(t_param *p)
+static void	ft_key_d(t_param *p)
 {
 	if (p->player != 'd')
 		p->player = 'd';
@@ -78,4 +78,22 @@ void	ft_key_d(t_param *p)
 	}
 	if (p->c == 0)
 		p->map[p->e_y][p->e_x] = 'e';
+}
+
+void	ft_move(int key, t_param *p)
+{
+	static int	i;
+
+	if (key == 119)
+		ft_key_w(p);
+	else if (key == 97)
+		ft_key_a(p);
+	else if (key == 115)
+		ft_key_s(p);
+	else if (key == 100)
+		ft_key_d(p);
+	else
+		return ;
+	i++;
+	ft_printf("Move : %d\n", i);
 }

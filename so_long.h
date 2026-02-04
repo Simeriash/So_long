@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 16:55:34 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:41:17 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,10 @@ void	ft_display(char **map);
 void	ft_exit_so_long(t_param *p, int exit_code);
 void	ft_init_map(t_param *p, t_data *d);
 void	ft_init_assets(t_param *p, t_data *d);
+void	ft_init_assets_forest_map(t_data *d);
+void	ft_init_assets_desert_map(t_data *d);
 void	ft_map(t_param *p);
-void	ft_key_w(t_param *p);
-void	ft_key_a(t_param *p);
-void	ft_key_s(t_param *p);
-void	ft_key_d(t_param *p);
+void	ft_move(int key, t_param *p);
 
 /*===============ERROR===============*/
 

@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:04:17 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 16:33:16 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:21:29 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,8 @@ static int	ft_key_hook(int key, t_param *p)
 {
 	if (key == 65307)
 		ft_exit_so_long(p, 0);
-	else if (key == 119)
-		ft_key_w(p);
-	else if (key == 97)
-		ft_key_a(p);
-	else if (key == 115)
-		ft_key_s(p);
-	else if (key == 100)
-		ft_key_d(p);
+	else
+		ft_move(key, p);
 	return (0);
 }
 

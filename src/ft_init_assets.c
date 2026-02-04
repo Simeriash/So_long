@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:03:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 14:25:06 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:42:13 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,64 +41,6 @@ static void	ft_files_to_image(void *mlx, t_asset *a, t_data *d)
 	a->sapp = mlx_xpm_file_to_image(mlx, d->sapp, &a->w, &a->h);
 }
 
-static void	ft_init_map_1(t_data *d)
-{
-	d->cor_1 = "assets/map_1/tree_3.xpm";
-	d->cor_2 = "assets/map_1/tree_4.xpm";
-	d->cor_3 = "assets/map_1/tree_1.xpm";
-	d->cor_4 = "assets/map_1/tree_2.xpm";
-	d->top_1 = "assets/map_1/tree_4.xpm";
-	d->top_2 = "assets/map_1/tree_3.xpm";
-	d->right_1 = "assets/map_1/tree_1.xpm";
-	d->right_2 = "assets/map_1/tree_4.xpm";
-	d->bot_1 = "assets/map_1/tree_1.xpm";
-	d->bot_2 = "assets/map_1/tree_2.xpm";
-	d->left_1 = "assets/map_1/tree_2.xpm";
-	d->left_2 = "assets/map_1/tree_3.xpm";
-	d->wall = "assets/map_1/bush.xpm";
-	d->ground = "assets/map_1/grass.xpm";
-	d->tree_1 = "assets/map_1/tree_1.xpm";
-	d->tree_2 = "assets/map_1/tree_2.xpm";
-	d->tree_3 = "assets/map_1/tree_3.xpm";
-	d->tree_4 = "assets/map_1/tree_4.xpm";
-	d->p_1 = "assets/map_1/player_1.xpm";
-	d->p_2 = "assets/map_1/player_2.xpm";
-	d->p_3 = "assets/map_1/player_3.xpm";
-	d->p_4 = "assets/map_1/player_4.xpm";
-	d->e_c = "assets/exit_close.xpm";
-	d->e_o = "assets/exit_open.xpm";
-	d->sapp = "assets/map_1/sapphire.xpm";
-}
-
-static void	ft_init_map_2(t_data *d)
-{
-	d->cor_1 = "assets/map_2/corner_1.xpm";
-	d->cor_2 = "assets/map_2/corner_2.xpm";
-	d->cor_3 = "assets/map_2/corner_3.xpm";
-	d->cor_4 = "assets/map_2/corner_4.xpm";
-	d->top_1 = "assets/map_2/wall_1.xpm";
-	d->top_2 = "assets/map_2/wall_1.xpm";
-	d->right_1 = "assets/map_2/wall_2.xpm";
-	d->right_2 = "assets/map_2/wall_2.xpm";
-	d->bot_1 = "assets/map_2/wall_3.xpm";
-	d->bot_2 = "assets/map_2/wall_3.xpm";
-	d->left_1 = "assets/map_2/wall_4.xpm";
-	d->left_2 = "assets/map_2/wall_4.xpm";
-	d->wall = "assets/map_2/bush.xpm";
-	d->ground = "assets/map_2/gravel.xpm";
-	d->tree_1 = "assets/map_2/tree_1.xpm";
-	d->tree_2 = "assets/map_2/tree_2.xpm";
-	d->tree_3 = "assets/map_2/tree_3.xpm";
-	d->tree_4 = "assets/map_2/tree_4.xpm";
-	d->p_1 = "assets/map_2/player_1.xpm";
-	d->p_2 = "assets/map_2/player_2.xpm";
-	d->p_3 = "assets/map_2/player_3.xpm";
-	d->p_4 = "assets/map_2/player_4.xpm";
-	d->e_c = "assets/exit_close.xpm";
-	d->e_o = "assets/exit_open.xpm";
-	d->sapp = "assets/map_2/sapphire.xpm";
-}
-
 static void	ft_ctrl(t_param *p, t_asset *a)
 {
 	if (a->cor_1 == NULL || a->cor_2 == NULL || a->cor_3 == NULL
@@ -126,9 +68,9 @@ void	ft_init_assets(t_param *p, t_data *d)
 		i++;
 	d->y = i;
 	if (((d->x) % 2 == 0) && ((d->y) % 2 == 0))
-		ft_init_map_1(d);
+		ft_init_assets_forest_map(d);
 	else
-		ft_init_map_2(d);
+		ft_init_assets_desert_map(d);
 	d->w = 32 * d->x;
 	d->h = 32 * d->y;
 	p->a->h = 32;
