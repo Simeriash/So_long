@@ -6,11 +6,20 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 12:36:44 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 12:42:10 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 13:00:51 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+static void	ft_init_2_be_continued(t_data *d)
+{
+	d->sapp = "assets/map_1/sapphire.xpm";
+	d->p_e_1 = "assets/map_1/player_exit_1.xpm";
+	d->p_e_2 = "assets/map_1/player_exit_2.xpm";
+	d->p_e_3 = "assets/map_1/player_exit_3.xpm";
+	d->p_e_4 = "assets/map_1/player_exit_4.xpm";
+}
 
 void	ft_init_assets_forest_map(t_data *d)
 {
@@ -38,5 +47,5 @@ void	ft_init_assets_forest_map(t_data *d)
 	d->p_4 = "assets/map_1/player_4.xpm";
 	d->e_c = "assets/exit_close.xpm";
 	d->e_o = "assets/exit_open.xpm";
-	d->sapp = "assets/map_1/sapphire.xpm";
+	ft_init_2_be_continued(d);
 }

@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:02:03 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 12:41:17 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:58:45 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ typedef struct s_data
 	char	*e_c;
 	char	*e_o;
 	char	*sapp;
+	char	*p_e_1;
+	char	*p_e_2;
+	char	*p_e_3;
+	char	*p_e_4;
 }	t_data;
 
 typedef struct s_asset
@@ -92,6 +96,10 @@ typedef struct s_asset
 	void	*e_c;
 	void	*e_o;
 	void	*sapp;
+	void	*p_e_1;
+	void	*p_e_2;
+	void	*p_e_3;
+	void	*p_e_4;
 }	t_asset;
 
 typedef struct s_param
@@ -127,6 +135,9 @@ void	ft_init_assets(t_param *p, t_data *d);
 void	ft_init_assets_forest_map(t_data *d);
 void	ft_init_assets_desert_map(t_data *d);
 void	ft_map(t_param *p);
+void	ft_border_north_south(t_param *p, int w, int h);
+void	ft_border_east_west(t_param *p, int w, int h);
+void	ft_fill_the_map(t_param *p, int i, int j);
 void	ft_move(int key, t_param *p);
 
 /*===============ERROR===============*/

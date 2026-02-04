@@ -6,11 +6,25 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:29:23 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/03 14:33:19 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 13:10:44 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+static void	ft_free_assets_continued_again(void *mlx, t_asset *a)
+{
+	if (a->sapp)
+		mlx_destroy_image(mlx, a->sapp);
+	if (a->p_e_1)
+		mlx_destroy_image(mlx, a->p_e_1);
+	if (a->p_e_2)
+		mlx_destroy_image(mlx, a->p_e_2);
+	if (a->p_e_3)
+		mlx_destroy_image(mlx, a->p_e_3);
+	if (a->p_e_4)
+		mlx_destroy_image(mlx, a->p_e_4);
+}
 
 static void	ft_free_assets_continued(void *mlx, t_asset *a)
 {
@@ -38,6 +52,7 @@ static void	ft_free_assets_continued(void *mlx, t_asset *a)
 		mlx_destroy_image(mlx, a->e_c);
 	if (a->e_o)
 		mlx_destroy_image(mlx, a->e_o);
+	ft_free_assets_continued_again(mlx, a);
 }
 
 static void	ft_free_assets(void *mlx, t_asset *a)
@@ -74,8 +89,6 @@ void	ft_exit_so_long(t_param *p, int exit_code)
 	if (p->mlx)
 	{
 		ft_free_assets(p->mlx, p->a);
-		if (p->a->sapp)
-			mlx_destroy_image(p->mlx, p->a->sapp);
 		if (p->win)
 			mlx_destroy_window(p->mlx, p->win);
 		mlx_destroy_display(p->mlx);

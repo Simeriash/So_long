@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:22:20 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 12:44:24 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:29:21 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,70 +14,110 @@
 
 static void	ft_key_w(t_param *p)
 {
-	if (p->player != 'w')
+	if (p->map[p->p_y - 1][p->p_x] >= '1' && p->map[p->p_y - 1][p->p_x] <= '5'
+		&& p->map[p->p_y][p->p_x] == 'E')
+		p->player = 'u';
+	else if (p->player != 'w' && p->map[p->p_y][p->p_x] != 'E')
 		p->player = 'w';
 	if (p->map[p->p_y - 1][p->p_x] == '0' || p->map[p->p_y - 1][p->p_x] == 'C'
 		|| p->map[p->p_y - 1][p->p_x] == 'e')
 	{
+		if (p->player != 'w')
+			p->player = 'w';
 		if (p->map[p->p_y - 1][p->p_x] == 'C')
 			(p->c)--;
+		if (p->map[p->p_y][p->p_x] != 'E')
+			p->map[p->p_y][p->p_x] = '0';
 		p->map[p->p_y - 1][p->p_x] = 'P';
-		p->map[p->p_y][p->p_x] = '0';
 		(p->p_y)--;
 	}
-	if (p->c == 0)
-		p->map[p->e_y][p->e_x] = 'e';
+	else if (p->map[p->p_y - 1][p->p_x] == 'E')
+	{
+		p->map[p->p_y][p->p_x] = '0';
+		p->player = 'u';
+		(p->p_y)--;
+	}
 }
 
 static void	ft_key_a(t_param *p)
 {
-	if (p->player != 'a')
+	if (p->map[p->p_y][p->p_x - 1] >= '1' && p->map[p->p_y][p->p_x - 1] <= '5'
+		&& p->map[p->p_y][p->p_x] == 'E')
+		p->player = 'l';
+	else if (p->player != 'a' && p->map[p->p_y][p->p_x] != 'E')
 		p->player = 'a';
 	if (p->map[p->p_y][p->p_x - 1] == '0' || p->map[p->p_y][p->p_x - 1] == 'C'
 		|| p->map[p->p_y][p->p_x - 1] == 'e')
 	{
+		if (p->player != 'a')
+			p->player = 'a';
 		if (p->map[p->p_y][p->p_x - 1] == 'C')
 			(p->c)--;
+		if (p->map[p->p_y][p->p_x] != 'E')
+			p->map[p->p_y][p->p_x] = '0';
 		p->map[p->p_y][p->p_x - 1] = 'P';
-		p->map[p->p_y][p->p_x] = '0';
 		(p->p_x)--;
 	}
-	if (p->c == 0)
-		p->map[p->e_y][p->e_x] = 'e';
+	else if (p->map[p->p_y][p->p_x - 1] == 'E')
+	{
+		p->map[p->p_y][p->p_x] = '0';
+		p->player = 'l';
+		(p->p_x)--;
+	}
 }
 
 static void	ft_key_s(t_param *p)
 {
-	if (p->player != 's')
+	if (p->map[p->p_y + 1][p->p_x] >= '1' && p->map[p->p_y + 1][p->p_x] <= '5'
+		&& p->map[p->p_y][p->p_x] == 'E')
+		p->player = 'b';
+	else if (p->player != 's' && p->map[p->p_y][p->p_x] != 'E')
 		p->player = 's';
 	if (p->map[p->p_y + 1][p->p_x] == '0' || p->map[p->p_y + 1][p->p_x] == 'C'
 		|| p->map[p->p_y + 1][p->p_x] == 'e')
 	{
+		if (p->player != 's')
+			p->player = 's';
 		if (p->map[p->p_y + 1][p->p_x] == 'C')
 			(p->c)--;
+		if (p->map[p->p_y][p->p_x] != 'E')
+			p->map[p->p_y][p->p_x] = '0';
 		p->map[p->p_y + 1][p->p_x] = 'P';
-		p->map[p->p_y][p->p_x] = '0';
 		(p->p_y)++;
 	}
-	if (p->c == 0)
-		p->map[p->e_y][p->e_x] = 'e';
+	else if (p->map[p->p_y + 1][p->p_x] == 'E')
+	{
+		p->map[p->p_y][p->p_x] = '0';
+		p->player = 'b';
+		(p->p_y)++;
+	}
 }
 
 static void	ft_key_d(t_param *p)
 {
-	if (p->player != 'd')
+	if (p->map[p->p_y][p->p_x + 1] >= '1' && p->map[p->p_y][p->p_x + 1] <= '5'
+		&& p->map[p->p_y][p->p_x] == 'E')
+		p->player = 'r';
+	else if (p->player != 'd' && p->map[p->p_y][p->p_x] != 'E')
 		p->player = 'd';
 	if (p->map[p->p_y][p->p_x + 1] == '0' || p->map[p->p_y][p->p_x + 1] == 'C'
 		|| p->map[p->p_y][p->p_x + 1] == 'e')
 	{
+		if (p->player != 'd')
+			p->player = 'd';
 		if (p->map[p->p_y][p->p_x + 1] == 'C')
 			(p->c)--;
+		if (p->map[p->p_y][p->p_x] != 'E')
+			p->map[p->p_y][p->p_x] = '0';
 		p->map[p->p_y][p->p_x + 1] = 'P';
-		p->map[p->p_y][p->p_x] = '0';
 		(p->p_x)++;
 	}
-	if (p->c == 0)
-		p->map[p->e_y][p->e_x] = 'e';
+	else if (p->map[p->p_y][p->p_x + 1] == 'E')
+	{
+		p->map[p->p_y][p->p_x] = '0';
+		p->player = 'r';
+		(p->p_x)++;
+	}
 }
 
 void	ft_move(int key, t_param *p)
@@ -94,6 +134,8 @@ void	ft_move(int key, t_param *p)
 		ft_key_d(p);
 	else
 		return ;
+	if (p->c == 0)
+		p->map[p->e_y][p->e_x] = 'e';
 	i++;
 	ft_printf("Move : %d\n", i);
 }
