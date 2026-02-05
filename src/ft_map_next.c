@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:54:40 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 14:58:25 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/05 10:41:59 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,27 @@ void	ft_border_east_west(t_param *p, int w, int h)
 
 static void	ft_player(t_param *p, int i, int j)
 {
-	if (p->player == 's')
-		mlx_put_image_to_window(p->mlx, p->win, p->a->p_1, 32 * i, 32 * j);
-	else if (p->player == 'w')
-		mlx_put_image_to_window(p->mlx, p->win, p->a->p_2, 32 * i, 32 * j);
-	else if (p->player == 'a')
-		mlx_put_image_to_window(p->mlx, p->win, p->a->p_3, 32 * i, 32 * j);
-	else if (p->player == 'd')
-		mlx_put_image_to_window(p->mlx, p->win, p->a->p_4, 32 * i, 32 * j);
+	if (p->p_x == p->e_x && p->p_y == p->e_y && p->player == 's')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_o_1, 32 * i, 32 * j);
+	else if (p->p_x == p->e_x && p->p_y == p->e_y && p->player == 'w')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_o_2, 32 * i, 32 * j);
+	else if (p->p_x == p->e_x && p->p_y == p->e_y && p->player == 'a')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_o_3, 32 * i, 32 * j);
+	else if (p->p_x == p->e_x && p->p_y == p->e_y && p->player == 'd')
+		mlx_put_image_to_window(p->mlx, p->win, p->a->p_o_4, 32 * i, 32 * j);
+	if (p->p_x == p->e_x && p->p_y == p->e_y)
+		ft_exit_so_long(p, 0);
+	if (p->map[p->p_y][p->p_x] != 'e')
+	{
+		if (p->player == 's')
+			mlx_put_image_to_window(p->mlx, p->win, p->a->p_1, 32 * i, 32 * j);
+		else if (p->player == 'w')
+			mlx_put_image_to_window(p->mlx, p->win, p->a->p_2, 32 * i, 32 * j);
+		else if (p->player == 'a')
+			mlx_put_image_to_window(p->mlx, p->win, p->a->p_3, 32 * i, 32 * j);
+		else if (p->player == 'd')
+			mlx_put_image_to_window(p->mlx, p->win, p->a->p_4, 32 * i, 32 * j);
+	}
 }
 
 static void	ft_exit(t_param *p, int i, int j)

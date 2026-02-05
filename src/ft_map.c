@@ -6,24 +6,11 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 14:53:50 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/04 16:27:47 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/05 10:42:26 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-// static void	ft_condition_2_leave(t_param *p)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (p->map[p->p_y][p->p_x] == 'e')
-// 	{
-// 		while (i < 1000000000)
-// 			i++;
-// 		ft_exit_so_long(p, 0);
-// 	}
-// }
 
 void	ft_map(t_param *p)
 {
@@ -51,5 +38,4 @@ void	ft_map(t_param *p)
 		}
 		j++;
 	}
-	// ft_condition_2_leave(p);
 }
