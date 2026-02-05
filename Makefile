@@ -31,7 +31,7 @@ $(OBJ_DIR) :
 	mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) -I. -c $< -o $@
+	$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
 clean :
 	rm -rf $(OBJ)
