@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 10:54:28 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/02 11:17:47 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/05 12:43:14 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,7 @@ char	**ft_create_map(char *str)
 	i = 0;
 	while (map[++i])
 	{
-		if (len != ft_strlen(map[i])
-			|| (i + 1 == (int)len && map[i + 1] == NULL))
+		if (len != ft_strlen(map[i]))
 			ft_error_map(map, 0);
 	}
 	if ((len < 6 && i < 4) || (len < 4 && i < 6) || len < 3 || i < 3)
