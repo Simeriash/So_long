@@ -36,12 +36,12 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 clean :
 	rm -rf $(OBJ)
 	rm -rf $(OBJ_DIR)
-	# $(MAKE) -C minilibx-linux/ -B clean
-	# $(MAKE) -C src/Libft -B clean
+	$(MAKE) -C minilibx-linux/ -B clean
+	$(MAKE) -C src/Libft -B clean
 
 fclean : clean
 	rm -rf $(NAME)
-	# $(MAKE) -C minilibx-linux/ -B clean
-	# $(MAKE) -C src/Libft -B fclean
+	$(MAKE) -C minilibx-linux/ -B clean
+	$(MAKE) -C src/Libft -B fclean
 
 re : fclean all
