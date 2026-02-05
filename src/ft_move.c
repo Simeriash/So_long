@@ -6,7 +6,7 @@
 /*   By: julauren <julauren@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 15:22:20 by julauren          #+#    #+#             */
-/*   Updated: 2026/02/05 10:28:36 by julauren         ###   ########.fr       */
+/*   Updated: 2026/02/05 10:51:57 by julauren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ static void	ft_key_d(t_param *p, int *i)
 
 void	ft_move(int key, t_param *p)
 {
-	static int	i;
+	static int	i = 1;
 
 	if (key == 119)
 		ft_key_w(p, &i);
